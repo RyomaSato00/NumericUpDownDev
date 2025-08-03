@@ -29,11 +29,13 @@
             Width="20" Height="20" />
           <Button.Style>
             <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignPaperLightButton}">
-              <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Primary.Light}" />
+              <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Foreground}" />
               <Setter Property="BorderThickness" Value="1" />
               <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                  <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Primary}" />
+                </Trigger>
                 <Trigger Property="IsPressed" Value="True">
-                  <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Secondary}" />
                   <Setter Property="BorderThickness" Value="2" />
                 </Trigger>
               </Style.Triggers>
@@ -62,7 +64,7 @@
               <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                   <Setter Property="BorderThickness" Value="2" />
-                  <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Secondary}" />
+                  <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Primary}" />
                 </Trigger>
               </Style.Triggers>
             </Style>
@@ -80,11 +82,13 @@
             Width="20" Height="20" />
           <Button.Style>
             <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignPaperLightButton}">
-              <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Primary.Light}" />
+              <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Foreground}" />
               <Setter Property="BorderThickness" Value="1" />
               <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                  <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Primary}" />
+                </Trigger>
                 <Trigger Property="IsPressed" Value="True">
-                  <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Secondary}" />
                   <Setter Property="BorderThickness" Value="2" />
                 </Trigger>
               </Style.Triggers>
