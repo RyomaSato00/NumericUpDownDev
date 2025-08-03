@@ -9,93 +9,87 @@
   mc:Ignorable="d"
   d:DesignHeight="450"
   d:DesignWidth="800"
+  Width="60"
   x:Name="Root">
   <Grid>
-    <Border x:Name="HighlightBorder"
-      Width="100"
-      HorizontalAlignment="Center"
-      VerticalAlignment="Center"
-      CornerRadius="8"
-      Padding="8">
-      <StackPanel>
-        <Button x:Name="UpButton"
-          Width="80"
-          HorizontalAlignment="Center"
-          Margin="0,0,0,4"
-          Click="UpButton_Click">
-          <mate:PackIcon Kind="ChevronUp"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Width="20" Height="20" />
-          <Button.Style>
-            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignPaperLightButton}">
-              <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Foreground}" />
-              <Setter Property="BorderThickness" Value="1" />
-              <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                  <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Primary}" />
-                </Trigger>
-                <Trigger Property="IsPressed" Value="True">
-                  <Setter Property="BorderThickness" Value="2" />
-                </Trigger>
-              </Style.Triggers>
-            </Style>
-          </Button.Style>
-        </Button>
-
-        <Border x:Name="IndicatorFrameBorder"
-          Width="80" Height="42"
-          Background="Transparent"
+    <StackPanel>
+      <Button x:Name="UpButton"
+        Margin="0,0,0,4"
+        Click="UpButton_Click">
+        <mate:PackIcon Kind="ChevronUp"
           HorizontalAlignment="Center"
           VerticalAlignment="Center"
-          CornerRadius="4"
-          Padding="4,2,4,2"
-          MouseWheel="IndicatorFrameBorder_MouseWheel">
-          <TextBlock x:Name="IndicatorText"
-            FontFamily="Consolas"
-            FontSize="16"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Center"
-            Text="{Binding Value, ElementName=Root, Mode=OneWay}" />
-          <Border.Style>
-            <Style TargetType="{x:Type Border}">
-              <Setter Property="BorderThickness" Value="1" />
-              <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Foreground}" />
-              <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                  <Setter Property="BorderThickness" Value="2" />
-                  <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Primary}" />
-                </Trigger>
-              </Style.Triggers>
-            </Style>
-          </Border.Style>
-        </Border>
+          Width="20" Height="20" />
+        <Button.Style>
+          <Style TargetType="{x:Type Button}"
+            BasedOn="{StaticResource MaterialDesignPaperLightButton}">
+            <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Foreground}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Style.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush"
+                  Value="{DynamicResource MaterialDesign.Brush.Primary}" />
+              </Trigger>
+              <Trigger Property="IsPressed" Value="True">
+                <Setter Property="BorderThickness" Value="2" />
+              </Trigger>
+            </Style.Triggers>
+          </Style>
+        </Button.Style>
+      </Button>
 
-        <Button x:Name="DownButton"
-          Width="80"
+      <Border x:Name="IndicatorFrameBorder"
+        Height="36"
+        Background="Transparent"
+        VerticalAlignment="Center"
+        CornerRadius="4"
+        Padding="4,2,4,2"
+        MouseWheel="IndicatorFrameBorder_MouseWheel">
+        <TextBlock x:Name="IndicatorText"
+          FontFamily="Consolas"
+          FontSize="16"
+          HorizontalAlignment="Right"
+          VerticalAlignment="Center"
+          Text="{Binding Value, ElementName=Root, Mode=OneWay}" />
+        <Border.Style>
+          <Style TargetType="{x:Type Border}">
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Foreground}" />
+            <Style.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderThickness" Value="2" />
+                <Setter Property="BorderBrush"
+                  Value="{DynamicResource MaterialDesign.Brush.Primary}" />
+              </Trigger>
+            </Style.Triggers>
+          </Style>
+        </Border.Style>
+      </Border>
+
+      <Button x:Name="DownButton"
+        Margin="0,4,0,0"
+        Click="DownButton_Click">
+        <mate:PackIcon Kind="ChevronDown"
           HorizontalAlignment="Center"
-          Margin="0,4,0,0"
-          Click="DownButton_Click">
-          <mate:PackIcon Kind="ChevronDown"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Width="20" Height="20" />
-          <Button.Style>
-            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignPaperLightButton}">
-              <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Foreground}" />
-              <Setter Property="BorderThickness" Value="1" />
-              <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                  <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Primary}" />
-                </Trigger>
-                <Trigger Property="IsPressed" Value="True">
-                  <Setter Property="BorderThickness" Value="2" />
-                </Trigger>
-              </Style.Triggers>
-            </Style>
-          </Button.Style>
-        </Button>
-      </StackPanel>
-    </Border>
+          VerticalAlignment="Center"
+          Width="20" Height="20" />
+        <Button.Style>
+          <Style TargetType="{x:Type Button}"
+            BasedOn="{StaticResource MaterialDesignPaperLightButton}">
+            <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Foreground}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Style.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush"
+                  Value="{DynamicResource MaterialDesign.Brush.Primary}" />
+              </Trigger>
+              <Trigger Property="IsPressed" Value="True">
+                <Setter Property="BorderThickness" Value="2" />
+              </Trigger>
+            </Style.Triggers>
+          </Style>
+        </Button.Style>
+      </Button>
+    </StackPanel>
   </Grid>
 </UserControl>
