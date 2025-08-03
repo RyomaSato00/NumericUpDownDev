@@ -1,0 +1,97 @@
+<UserControl x:Class="NumericUpDownDev.Views.Numeric"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:local="clr-namespace:NumericUpDownDev.Views"
+  xmlns:mate="http://materialdesigninxaml.net/winfx/xaml/themes"
+  xmlns:xaml="http://schemas.microsoft.com/xaml/behaviors"
+  mc:Ignorable="d"
+  d:DesignHeight="450"
+  d:DesignWidth="800"
+  x:Name="Root">
+  <Grid>
+    <Border x:Name="HighlightBorder"
+      Width="100"
+      HorizontalAlignment="Center"
+      VerticalAlignment="Center"
+      CornerRadius="8"
+      Padding="8">
+      <StackPanel>
+        <Button x:Name="UpButton"
+          Width="80"
+          HorizontalAlignment="Center"
+          Margin="0,0,0,4"
+          Click="UpButton_Click">
+          <mate:PackIcon Kind="ChevronUp"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Width="20" Height="20" />
+          <Button.Style>
+            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignPaperLightButton}">
+              <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Primary.Light}" />
+              <Setter Property="BorderThickness" Value="1" />
+              <Style.Triggers>
+                <Trigger Property="IsPressed" Value="True">
+                  <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Secondary}" />
+                  <Setter Property="BorderThickness" Value="2" />
+                </Trigger>
+              </Style.Triggers>
+            </Style>
+          </Button.Style>
+        </Button>
+
+        <Border x:Name="IndicatorFrameBorder"
+          Width="80" Height="42"
+          Background="Transparent"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          CornerRadius="4"
+          Padding="4,2,4,2"
+          MouseWheel="IndicatorFrameBorder_MouseWheel">
+          <TextBlock x:Name="IndicatorText"
+            FontFamily="Consolas"
+            FontSize="16"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Text="{Binding Value, ElementName=Root, Mode=OneWay}" />
+          <Border.Style>
+            <Style TargetType="{x:Type Border}">
+              <Setter Property="BorderThickness" Value="1" />
+              <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Foreground}" />
+              <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                  <Setter Property="BorderThickness" Value="2" />
+                  <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Secondary}" />
+                </Trigger>
+              </Style.Triggers>
+            </Style>
+          </Border.Style>
+        </Border>
+
+        <Button x:Name="DownButton"
+          Width="80"
+          HorizontalAlignment="Center"
+          Margin="0,4,0,0"
+          Click="DownButton_Click">
+          <mate:PackIcon Kind="ChevronDown"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Width="20" Height="20" />
+          <Button.Style>
+            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignPaperLightButton}">
+              <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Primary.Light}" />
+              <Setter Property="BorderThickness" Value="1" />
+              <Style.Triggers>
+                <Trigger Property="IsPressed" Value="True">
+                  <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Secondary}" />
+                  <Setter Property="BorderThickness" Value="2" />
+                </Trigger>
+              </Style.Triggers>
+            </Style>
+          </Button.Style>
+        </Button>
+      </StackPanel>
+    </Border>
+  </Grid>
+</UserControl>
